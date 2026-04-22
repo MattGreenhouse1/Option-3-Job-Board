@@ -1,0 +1,250 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers at GreenLine Logistics | Global Opportunities</title>
+    <link rel="icon" href="https://img.icons8.com/color/48/truck.png" type="image/x-icon">
+    <style>
+        :root {
+            --primary: #1a365d;
+            --secondary: #2d3748;
+            --accent: #38a169;
+            --light: #f7fafc;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--secondary);
+            background-color: var(--white);
+            line-height: 1.6;
+        }
+
+        /* Top Nav */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 10%;
+            background: var(--white);
+            border-bottom: 1px solid #edf2f7;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.4rem;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--secondary);
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover { color: var(--accent); }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(rgba(26, 54, 93, 0.9), rgba(26, 54, 93, 0.9)), url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=2000');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 6rem 10%;
+            text-align: center;
+        }
+
+        .hero h1 { font-size: 3.5rem; margin-bottom: 1rem; }
+        .hero p { font-size: 1.25rem; opacity: 0.9; max-width: 700px; margin: 0 auto; }
+
+        /* Search/Filter Bar */
+        .filter-section {
+            max-width: 1000px;
+            margin: -2rem auto 3rem;
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            display: flex;
+            gap: 1rem;
+        }
+
+        .filter-section input, .filter-section select {
+            flex: 1;
+            padding: 0.8rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+
+        /* Job Section */
+        .content-wrap { max-width: 1000px; margin: 0 auto; padding: 0 1rem; }
+        
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        #job-list { display: grid; gap: 1rem; margin-bottom: 5rem; }
+
+        .job-card {
+            background: var(--white);
+            border: 1px solid #edf2f7;
+            padding: 1.5rem 2rem;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .job-card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transform: translateX(5px);
+        }
+
+        .job-title { font-size: 1.25rem; font-weight: 700; color: var(--primary); margin: 0; }
+        .job-loc { color: var(--text-light); font-size: 0.9rem; margin-top: 0.3rem; display: block; }
+
+        .view-btn {
+            border: 2px solid var(--accent);
+            color: var(--accent);
+            padding: 0.5rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+
+        /* Culture/Values Section */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin: 5rem 0;
+            text-align: center;
+        }
+
+        .value-card { padding: 2rem; background: var(--light); border-radius: 12px; }
+        .value-card h3 { color: var(--primary); margin-top: 0; }
+
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 4rem 10%;
+            text-align: center;
+            margin-top: 5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#" class="logo">GreenLine Logistics</a>
+        <div class="nav-links">
+            <a href="#">Solutions</a>
+            <a href="#">Technology</a>
+            <a href="#">Sustainability</a>
+            <a href="#">About Us</a>
+            <a href="#" style="color: var(--accent)">Careers</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>Move the World With Us</h1>
+        <p>Join the leaders in sustainable global supply chain management.</p>
+    </header>
+
+    <div class="content-wrap">
+        <div class="filter-section">
+            <input type="text" placeholder="Search roles (e.g. Manager)">
+            <select>
+                <option>All Locations</option>
+                <option>Dublin, IE</option>
+                <option>London, UK</option>
+                <option>Remote</option>
+            </select>
+            <button style="background: var(--accent); color: white; border: none; padding: 0 2rem; border-radius: 6px; font-weight: 600; cursor: pointer;">Search</button>
+        </div>
+
+        <div class="section-header">
+            <h2>Current Openings</h2>
+            <span id="job-count" style="background: #e2e8f0; padding: 0.2rem 0.8rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">Loading...</span>
+        </div>
+
+        <div id="job-list">
+            <div style="text-align: center; padding: 3rem;">Syncing with Greenhouse...</div>
+        </div>
+
+        <div class="values-grid">
+            <div class="value-card">
+                <h3>Global Impact</h3>
+                <p>We manage logistics for 40+ countries, ensuring goods move efficiently and ethically.</p>
+            </div>
+            <div class="value-card">
+                <h3>Eco-Innovation</h3>
+                <p>Our goal is 100% carbon-neutral shipping by 2030. Join the green revolution.</p>
+            </div>
+            <div class="value-card">
+                <h3>Growth Mindset</h3>
+                <p>We invest in our people with annual learning stipends and leadership tracks.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 GreenLine Logistics International. All rights reserved.</p>
+    </footer>
+
+    <script>
+        async function loadJobs() {
+            const list = document.getElementById('job-list');
+            const count = document.getElementById('job-count');
+            
+            try {
+                const res = await fetch('https://boards-api.greenhouse.io/v1/boards/logisticsgreenline/jobs');
+                const data = await res.json();
+                
+                count.innerText = `${data.jobs.length} Positions`;
+                list.innerHTML = '';
+
+                data.jobs.forEach(job => {
+                    const el = document.createElement('a');
+                    el.href = job.absolute_url;
+                    el.target = '_blank';
+                    el.className = 'job-card';
+                    el.innerHTML = `
+                        <div>
+                            <p class="job-title">${job.title}</p>
+                            <span class="job-loc">📍 ${job.location.name} &bull; ${job.company_name}</span>
+                        </div>
+                        <div class="view-btn">Apply Now</div>
+                    `;
+                    list.appendChild(el);
+                });
+            } catch (e) {
+                list.innerHTML = '<p>Error loading jobs. Please check your Greenhouse API settings.</p>';
+            }
+        }
+        loadJobs();
+    </script>
+</body>
+</html>
