@@ -218,8 +218,7 @@
             const list = document.getElementById('job-list');
             const count = document.getElementById('job-count');
             
-            // --- TRACKING PARAMETER LOGIC ---
-            // Grabs ?gh_src=... from the browser address bar
+            // 1. Capture tracking parameter
             const urlParams = new URLSearchParams(window.location.search);
             const ghSrc = urlParams.get('gh_src');
             
@@ -233,10 +232,9 @@
                 data.jobs.forEach(job => {
                     const el = document.createElement('a');
                     
-                    // --- APPEND TRACKING TO LINK ---
+                    // 2. Build external URL with tracking
                     let finalUrl = job.absolute_url;
                     if (ghSrc) {
-                        // Check if absolute_url already has a parameter (unlikely for Greenhouse links)
                         const separator = finalUrl.includes('?') ? '&' : '?';
                         finalUrl += `${separator}gh_src=${ghSrc}`;
                     }
@@ -244,6 +242,12 @@
                     el.href = finalUrl;
                     el.target = '_blank';
                     el.className = 'job-card';
+                    
+                    // 3. CRITICAL FIX: Block Greenhouse scripts from staying on page
+                    el.onclick = function(e) {
+                        e.stopPropagation(); 
+                    };
+
                     el.innerHTML = `
                         <div>
                             <p class="job-title">${job.title}</p>
